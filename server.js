@@ -9,7 +9,7 @@ const PORT = 5000;
 
 server.use(bodyParser.json());
 server.use(cors({
-  origin: 'https://dice-game-frontend-gamma.vercel.app', 
+  origin: 'https://dice-game-frontend-gamma.vercel.app/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
   credentials: true, 
 }));
