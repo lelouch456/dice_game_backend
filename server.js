@@ -8,11 +8,13 @@ const server = express();
 const PORT = 5000;
 
 server.use(bodyParser.json());
-server.use(cors({
-  origin: 'https://dice-game-frontend-gamma.vercel.app/', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-  credentials: true, 
-}));
+server.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 let balance = 1000; 
 
 const generateServerSeed = () => crypto.randomBytes(32).toString("hex");
